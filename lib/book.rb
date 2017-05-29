@@ -6,4 +6,10 @@ class Book
     @title = title
     @author = author
   end
+
+  def to_s
+    puts "Book: #{@title}, #{@author}"
+  end
+
 end
+
