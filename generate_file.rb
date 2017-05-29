@@ -1,12 +1,12 @@
 #module Faker
-module Faker
+module GenerateFile
   def authors
-  	@authors = []
-  	rand(5..6).times do
-  	  @authors << Author.new(
-  	    Faker::Book.author
-  	    Faker::Lorem.sentence(1)
-  	  )
+    @authors = []
+    rand(5..6).times do
+      @authors << Author.new(
+        Faker::Book.author
+  	Faker::Lorem.sentence(1)
+      )
    end 
   end
 
@@ -22,8 +22,8 @@ module Faker
   end
 
   def readers
-  	@readers = []
-  	rand(5..9).times do
+    @readers = []
+    rand(5..9).times do
       @readers << Reader.new(
         Faker::Name.name
         Faker::Internet.free_email
@@ -35,12 +35,12 @@ module Faker
   end
 
   def books
-  	@books = []
-  	rand(7...9).times do
+    @books = []
+    rand(7...9).times do
       @books << Book.new(
         Faker::Book.title
-  	    Faker::Book.author
+  	Faker::Book.author
       )
-  	end
+    end
   end
 end

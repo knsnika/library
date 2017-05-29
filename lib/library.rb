@@ -20,16 +20,9 @@ class Library
     @authors = authors
   end
 
-  def data_yaml
-    File.new('data.yaml', 'w')
-    File.open('data.yaml', 'w') { |f| f.write(YAML.dump(self)) }
-  end
-
-  def self.export(element, file = 'data.yml')
+  def export_data(file = 'data.yml')
     File.new(file, 'w') unless File.exist?(file)
-    File.open(file, 'w') do |data|
-      data.write(element.to_yaml)
-    end
+    File.open(file, 'w') { |data| data.write to_yaml }
   end
   
   def import_data(file = 'data.yml')
@@ -45,7 +38,6 @@ class Library
     generate_books
     generate_readers
     generate_orders
-    self.class.export(self)
   end
   
   def top_book
