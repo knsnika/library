@@ -1,12 +1,12 @@
 # class Library
-require 'faker'
+
 require 'yaml'
 
-require 'author'
-require 'book'
-require 'order'
-require 'reader'
-require './generate_file'
+require_relative 'author'
+require_relative 'book'
+require_relative 'order'
+require_relative 'reader'
+require_relative '../generate_file'
 
 class Library
   include Faker
@@ -31,13 +31,6 @@ class Library
     @orders = data.orders
     @readers = data.readers
     @authors = data.authors
-  end
-
-  def generate
-    generate_authors
-    generate_books
-    generate_readers
-    generate_orders
   end
   
   def top_book
