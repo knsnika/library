@@ -15,7 +15,7 @@ module GenerateFile
     rand(5..6).times do
       @authors << Author.new(
         Faker::Book.author,
-  	    Faker::Lorem.sentence(1)
+        Faker::Lorem.sentence(1)
       )
    end 
   end
@@ -49,7 +49,7 @@ module GenerateFile
     rand(7...9).times do
       @books << Book.new(
         Faker::Book.title,
-  	    Faker::Book.author
+        Faker::Book.author
       )
     end
   end

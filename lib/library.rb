@@ -9,7 +9,7 @@ require_relative 'reader'
 require_relative '../generate_file'
 
 class Library
-  include Faker
+  include GenerateFile
 
   attr_accessor :books, :orders, :readers, :authors
 
@@ -42,7 +42,7 @@ class Library
   end
 
   def top_book_lovers
-  	top(3, :book) do |books|
+    top(3, :book) do |books|
       @orders.flat_map { |order| order.reader if books.include?(order.book) }
              .compact.uniq.size
     end
